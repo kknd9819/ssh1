@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+     <constant name="struts.objectFactory" value="spring"></constant>
+	 
+	<package name="app1" extends="struts-default" namespace="/app1/act"  >
+		
+		<action name="logaction_*" class="logaction" method="{1}">
+		         <result name="welcome">/WEB-INF/welcome.jsp</result>
+		         <result name="index" type="redirect">
+		         	<param name="location">/index.jsp</param>
+		         	<param name="msgState">${msgState}</param>
+		         </result>                                         
+		</action>
+	
+	</package>
+
+
+</struts>    
